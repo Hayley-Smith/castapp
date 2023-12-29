@@ -12,7 +12,8 @@ class WorshipPage extends StatelessWidget {
 
     String formatTimestamp(DateTime dateTime) {
       // Use DateFormat from the intl package for formatting
-      DateFormat dateFormat = DateFormat.yMMMMd(); // You can customize the pattern
+      DateFormat dateFormat =
+          DateFormat.yMMMMd(); // You can customize the pattern
 
       // Format the DateTime object
       String formattedDate = dateFormat.format(dateTime);
@@ -31,10 +32,16 @@ class WorshipPage extends StatelessWidget {
             return Card(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: ListTile(
-                  title: Text(prayers[index].text),
+                child: ExpansionTile(
+                  title: Text(prayers[index].title,
+                  style: const TextStyle(color: Colors.white),),
                   subtitle: Text(dateTime),
-                  // Add more customization as needed
+                  children: [
+                    Text(
+                      prayers[index].text,
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
                 ),
               ),
             );

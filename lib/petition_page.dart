@@ -40,7 +40,8 @@ class PetitionPage extends StatelessWidget {
               itemCount: prayers.length,
               itemBuilder: (BuildContext context, int index) {
                 // Get timestamp and format
-                final String dateTime = formatTimestamp(prayers[index].dateTime);
+                final String dateTime =
+                    formatTimestamp(prayers[index].dateTime);
 
                 return Card(
                   child: Padding(
@@ -66,7 +67,10 @@ class PetitionPage extends StatelessWidget {
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       'Philippians 4:6 (NIV): "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God." \n\nYour petition prayers will be visible on the sabbath for reflection.',
-                      style: TextStyle(fontSize: 18.0),
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),

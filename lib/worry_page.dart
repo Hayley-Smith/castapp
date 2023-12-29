@@ -45,7 +45,7 @@ class WorryPage extends StatelessWidget {
                 return Card(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
+                    child: ExpansionTile(
                       title: Text(prayers[index].text),
                       subtitle: Text(dateTime),
                       // Add more customization as needed
@@ -66,7 +66,9 @@ class WorryPage extends StatelessWidget {
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       '1 Peter 5:7 (NIV): "Cast all your anxiety on him because he cares for you." \n \nYour worry prayers will be visible on the sabbath for reflection.',
-                      style: TextStyle(fontSize: 18.0),
+                      style: TextStyle(fontSize: 18.0,
+
+                        color: Colors.white,),
                     ),
                   ),
                 ),
