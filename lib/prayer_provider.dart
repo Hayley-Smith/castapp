@@ -13,7 +13,7 @@ class PrayerProvider with ChangeNotifier {
       isPetition: false,
     ),Prayer(
       id: '12',
-      text: 'Grateful for this or that',
+      text: 'Grateful for cheese',
       userId: 'user123',
       dateTime: DateTime.now(),
       isWorship: true,
