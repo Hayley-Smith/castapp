@@ -1,3 +1,4 @@
+import 'package:castapp/authentication/authentication.dart';
 import 'package:castapp/homepage.dart';
 import 'package:castapp/landing_page.dart';
 import 'package:castapp/prayer_provider.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.dark, primarySwatch: Colors.grey),
-      home: LandingPage(),
+      home: const AuthenticationPage(),
     );
   }
 }

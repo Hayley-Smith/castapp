@@ -80,7 +80,7 @@ class _HomepageState extends State<Homepage> {
                 builder: (BuildContext context) {
                   var prayerController = TextEditingController();
                   return SizedBox(
-                      height: 500,
+                      height: MediaQuery.of(context).size.height * .6,
                       child: SingleChildScrollView(
                           child: Container(
                         padding: const EdgeInsets.all(16.0),
@@ -95,14 +95,9 @@ class _HomepageState extends State<Homepage> {
                             TextFormField(
                               onFieldSubmitted: (String value) {
                                 void _handleSubmit(String value) {
-                                  // Implement your logic for handling the submitted text here
-                                  print('Submitted: $value');
                                   submitPrayer(context, prayerController);
-                                  // You can clear the text field if needed
                                   prayerController.clear();
                                 }
-
-                                // Handle the submitted text
                                 _handleSubmit(value);
                               },
                               minLines: 1,
