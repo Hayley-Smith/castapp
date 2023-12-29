@@ -57,16 +57,21 @@ class WorryPage extends StatelessWidget {
           );
         } else {
           // Display centered text
-          return const Center(
-            child: Card(
-              child: Padding(
+          return const Column(
+            children: [
+              Padding(
                 padding: EdgeInsets.all(8.0),
-                child: Text(
-                  'Your worry prayers will be visible on the sabbath for reflection.',
-                  style: TextStyle(fontSize: 18.0),
+                child: Card(
+                  child: Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text(
+                      '1 Peter 5:7 (NIV): "Cast all your anxiety on him because he cares for you." \n \nYour worry prayers will be visible on the sabbath for reflection.',
+                      style: TextStyle(fontSize: 18.0),
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ],
           );
         }
       },

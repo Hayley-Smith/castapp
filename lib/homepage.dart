@@ -16,29 +16,26 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-
-
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3, // Number of tabs
       child: Scaffold(
         appBar: AppBar(
-          title: const Center(child: Text('Cast')),
+          title: Text('Cast'),
           bottom: TabBar(
             tabs: const [
               Tab(text: 'Worship'),
               Tab(text: 'Worries'),
               Tab(text: 'Petitions'),
             ],
-
             onTap: (index) {
               // Initialize debateType with a default value
               DebateType debateType = DebateType.worship;
 
               // Map the tab index to the corresponding DebateType
-              final typeProvider = Provider.of<TypeProvider>(context, listen: false);
+              final typeProvider =
+                  Provider.of<TypeProvider>(context, listen: false);
               switch (index) {
                 case 0:
                   debateType = DebateType.worship;
@@ -91,7 +88,7 @@ class _HomepageState extends State<Homepage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text(
-                              'Enter your text:',
+                              'Enter your prayer:',
                               style: TextStyle(fontSize: 18.0),
                             ),
                             const SizedBox(height: 8.0),
@@ -105,14 +102,14 @@ class _HomepageState extends State<Homepage> {
                                   prayerController.clear();
                                 }
 
-
                                 // Handle the submitted text
                                 _handleSubmit(value);
                               },
                               minLines: 1,
                               controller: prayerController,
                               decoration: const InputDecoration(
-                                labelText: 'Text',
+                                labelText:
+                                    '"In everything, pray." - 1 Thessalonians 5:18 (NIV)',
                                 border: OutlineInputBorder(),
                               ),
                               // Other properties or controllers for the TextFormField
@@ -120,9 +117,9 @@ class _HomepageState extends State<Homepage> {
                             const SizedBox(height: 16.0),
                             ElevatedButton(
                               onPressed: () {
-
                                 //get prayer type
-                                submitPrayer(context, prayerController); // Close the bottom sheet
+                                submitPrayer(context,
+                                    prayerController); // Close the bottom sheet
                               },
                               child: const Text('Submit'),
                             ),
@@ -131,23 +128,25 @@ class _HomepageState extends State<Homepage> {
                       )));
                 });
           },
-          backgroundColor: Colors.black38,
-          child: const Icon(Icons.add, color: Colors.grey,),
+          backgroundColor: Colors.grey,
+          child: const Icon(
+            Icons.add,
+            color: Colors.black,
+          ),
         ),
       ),
     );
   }
 
-  void submitPrayer(BuildContext context, TextEditingController prayerController) {
-
+  void submitPrayer(
+      BuildContext context, TextEditingController prayerController) {
     //get prayer type
-    DebateType type = Provider.of<TypeProvider>(context, listen: false).currentDebateType;
+    DebateType type =
+        Provider.of<TypeProvider>(context, listen: false).currentDebateType;
 
-    if (type ==  DebateType.worry) {
+    if (type == DebateType.worry) {
       final worryPrayer = Prayer(
-        id: DateTime.now()
-            .millisecondsSinceEpoch
-            .toString(),
+        id: DateTime.now().millisecondsSinceEpoch.toString(),
         text: prayerController.text,
         userId: 'user123',
         dateTime: DateTime.now(),
@@ -155,12 +154,11 @@ class _HomepageState extends State<Homepage> {
         isWorry: true,
         isPetition: false,
       );
-      Provider.of<PrayerProvider>(context, listen: false).addPrayer(worryPrayer);
+      Provider.of<PrayerProvider>(context, listen: false)
+          .addPrayer(worryPrayer);
     } else if (type == DebateType.petition) {
       final petitionPrayer = Prayer(
-        id: DateTime.now()
-            .millisecondsSinceEpoch
-            .toString(),
+        id: DateTime.now().millisecondsSinceEpoch.toString(),
         text: prayerController.text,
         userId: 'user123',
         dateTime: DateTime.now(),
@@ -168,12 +166,11 @@ class _HomepageState extends State<Homepage> {
         isWorry: false,
         isPetition: true,
       );
-      Provider.of<PrayerProvider>(context, listen: false).addPrayer(petitionPrayer);
+      Provider.of<PrayerProvider>(context, listen: false)
+          .addPrayer(petitionPrayer);
     } else {
       final worshipPrayer = Prayer(
-        id: DateTime.now()
-            .millisecondsSinceEpoch
-            .toString(),
+        id: DateTime.now().millisecondsSinceEpoch.toString(),
         text: prayerController.text,
         userId: 'user123',
         dateTime: DateTime.now(),
@@ -181,15 +178,11 @@ class _HomepageState extends State<Homepage> {
         isWorry: false,
         isPetition: false,
       );
-      Provider.of<PrayerProvider>(context, listen: false).addPrayer(worshipPrayer);
+      Provider.of<PrayerProvider>(context, listen: false)
+          .addPrayer(worshipPrayer);
     }
 
-
-
-
-
     // Handle the button tap
-    Navigator.pop(
-        context); // Close the bottom sheet
+    Navigator.pop(context); // Close the bottom sheet
   }
 }
