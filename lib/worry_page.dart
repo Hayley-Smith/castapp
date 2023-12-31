@@ -22,7 +22,7 @@ class WorryPage extends StatelessWidget {
     String formatTimestamp(DateTime dateTime) {
       // Use DateFormat from the intl package for formatting
       DateFormat dateFormat =
-      DateFormat.yMMMMd(); // You can customize the pattern
+      DateFormat.yMMMMd();
 
       // Format the DateTime object
       String formattedDate = dateFormat.format(dateTime);
@@ -33,7 +33,6 @@ class WorryPage extends StatelessWidget {
     return LayoutBuilder(
       builder: (BuildContext context, BoxConstraints constraints) {
         if (isSabbath) {
-          // Display the list of petitions
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: ListView.builder(
@@ -46,9 +45,18 @@ class WorryPage extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ExpansionTile(
-                      title: Text(prayers[index].text),
+                      title: Text(prayers[index].title,
+                        style: const TextStyle(color: Colors.white),),
                       subtitle: Text(dateTime),
-                      // Add more customization as needed
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            prayers[index].text,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 );

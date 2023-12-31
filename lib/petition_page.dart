@@ -46,10 +46,19 @@ class PetitionPage extends StatelessWidget {
                 return Card(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: ListTile(
-                      title: Text(prayers[index].text),
+                    child: ExpansionTile(
+                      title: Text(prayers[index].title,
+                        style: const TextStyle(color: Colors.white),),
                       subtitle: Text(dateTime),
-                      // Add more customization as needed
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            prayers[index].text,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 );

@@ -6,14 +6,14 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Man of God app'),
+        title: const Text('Man of God'),
       ),
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [
-              Colors.black38,
-              Colors.grey,
+            colors: [ Colors.grey,
+              Colors.white,
+
             ],
           ),
         ),
@@ -118,7 +118,7 @@ class LandingPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 40),
                 const Text(
-                  'Why choose Cast?',
+                  'Why choose Man of God?',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 const Text(

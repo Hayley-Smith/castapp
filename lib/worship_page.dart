@@ -37,9 +37,12 @@ class WorshipPage extends StatelessWidget {
                   style: const TextStyle(color: Colors.white),),
                   subtitle: Text(dateTime),
                   children: [
-                    Text(
-                      prayers[index].text,
-                      style: TextStyle(color: Colors.white),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        prayers[index].text,
+                        style: const TextStyle(color: Colors.white),
+                      ),
                     ),
                   ],
                 ),

@@ -94,47 +94,50 @@ class _PrayerInputPageState extends State<PrayerInputPage> {
           padding: const EdgeInsets.all(16.0),
           child: Center(
             child: Card(
-              child: Column(mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  // Title Input
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextField(maxLines: 1, maxLength: 140,
-                      controller: titleController,
-                      decoration: const InputDecoration(
-                        labelText: 'Title',
-                        hintText: 'Enter prayer title',
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    // Title Input
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextField(maxLines: 1, maxLength: 140,
+                        controller: titleController,
+                        decoration: const InputDecoration(
+                          labelText: 'Title',
+                          hintText: 'Enter prayer title',
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 4),
+                    const SizedBox(height: 4),
 
-                  // Body Input
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextField(minLines: 1,maxLength: 5000,
-                      controller: bodyController,
-                      maxLines: 6, // Allow multiline input
-                      decoration: const InputDecoration(
-                        labelText: 'Body',
-                        hintText: 'Enter prayer details',
+                    // Body Input
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: TextField(minLines: 1,maxLength: 5000,
+                        controller: bodyController,
+                        maxLines: 6, // Allow multiline input
+                        decoration: const InputDecoration(
+                          labelText: 'Body',
+                          hintText: 'Enter prayer details',
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(height: 4),
+                    const SizedBox(height: 4),
 
-                  // Submit Button
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                      onPressed: () {
-                        submitPrayer(context, titleController, bodyController);
-                      },
-                      child: const Text('Submit'),
+                    // Submit Button
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          submitPrayer(context, titleController, bodyController);
+                        },
+                        child: const Text('Submit'),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
