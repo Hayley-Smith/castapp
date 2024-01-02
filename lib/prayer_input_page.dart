@@ -105,10 +105,12 @@ class _PrayerInputPageState extends State<PrayerInputPage> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(maxLines: 1, maxLength: 140,
+                        style: const TextStyle(color: Colors.grey),
                         controller: titleController,
                         decoration: const InputDecoration(
                           labelText: 'Title',
                           hintText: 'Enter prayer title',
+
                         ),
                       ),
                     ),
@@ -118,6 +120,7 @@ class _PrayerInputPageState extends State<PrayerInputPage> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(minLines: 1,maxLength: 5000,
+                        style: const TextStyle(color: Colors.grey),
                         controller: bodyController,
                         maxLines: 6, // Allow multiline input
                         decoration: const InputDecoration(

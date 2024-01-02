@@ -77,7 +77,6 @@ class _HomepageState extends State<Homepage> {
             ),
           ),
           floatingActionButton: FloatingActionButton(
-            backgroundColor: Colors.grey,
             child: const Icon(
               Icons.add,
             ),

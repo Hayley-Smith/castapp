@@ -9,7 +9,7 @@ class BibleQuotePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Bible Quote Page'),
+        title: const Text('Bible Study'),
       ),
       body: Container(
         decoration: const BoxDecoration(
@@ -32,7 +32,7 @@ class BibleQuotePage extends StatelessWidget {
                     child: Column(
                       children: [
                         const Text(
-                          'Bible Quote:',
+                          'Daily Bible Quote:',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -51,7 +51,7 @@ class BibleQuotePage extends StatelessWidget {
                         ),
                         const SizedBox(height: 16),
                         const Text(
-                          'Additional Information:',
+                          'Devotional:',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
