@@ -1,3 +1,4 @@
+import 'package:castapp/file_controller.dart';
 import 'package:castapp/prayer_entity.dart';
 import 'package:flutter/material.dart';
 
@@ -9,9 +10,13 @@ class PrayerProvider with ChangeNotifier {
   // Getter for the list of prayers
   List<Prayer> get prayers => _prayers;
 
+  // File path for storing prayers
+  final String filePath = 'TODO UPDATE THIS';
+
   // Add a new prayer
   void addPrayer(Prayer prayer) {
     _prayers.add(prayer);
+    FileManager().savePrayerToFile(prayer);
     notifyListeners();
   }
 

@@ -1,3 +1,4 @@
+import 'package:castapp/bible_quote_page.dart';
 import 'package:castapp/homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -11,9 +12,9 @@ class LandingPage extends StatelessWidget {
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [ Colors.grey,
+            colors: [
+              Colors.grey,
               Colors.white,
-
             ],
           ),
         ),
@@ -41,6 +42,30 @@ class LandingPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
+                        builder: (context) => const BibleQuotePage(),
+                      ),
+                    );
+                  },
+                  child: const Column(
+                    children: [
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Text(
+                        'Bible Study',
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
                         builder: (context) => const Homepage(),
                       ),
                     );
@@ -51,7 +76,7 @@ class LandingPage extends StatelessWidget {
                         height: 40,
                       ),
                       Text(
-                        'Enter Your Prayer Space',
+                        'Prayer Space',
                       ),
                       SizedBox(
                         height: 40,

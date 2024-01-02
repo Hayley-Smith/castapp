@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class PrayerInputPage extends StatefulWidget {
+  const PrayerInputPage({super.key});
+
   @override
   _PrayerInputPageState createState() => _PrayerInputPageState();
 }
@@ -147,8 +149,4 @@ class _PrayerInputPageState extends State<PrayerInputPage> {
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: PrayerInputPage(),
-  ));
-}
+
