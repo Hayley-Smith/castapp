@@ -33,7 +33,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey.shade900, brightness: Brightness.dark),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.blueGrey.shade900,
+          brightness: Brightness.dark,
+        ),
         brightness: Brightness.dark,
         textTheme: GoogleFonts.montserratTextTheme(
           Theme.of(context).textTheme,
